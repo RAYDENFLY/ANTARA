@@ -1,5 +1,4 @@
-import { Client, ClientOptions, Collection } from "discord.js";
-import * as config from "../config/config";
+import { Client } from "discord.js";
+
 export class Sys extends Client {
-    public readonly config: any
 }

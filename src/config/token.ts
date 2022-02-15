@@ -1,1 +1,1 @@
-export const token = "";
+export const token = "";            // Token of your bot

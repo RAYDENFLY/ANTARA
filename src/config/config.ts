@@ -1,4 +1,4 @@
-import { ClientOptions, ClientPresenceStatus, Collection, Intents, UserResolvable } from "discord.js";
+import { ClientOptions, Collection, Intents } from "discord.js";
 export const sysoption: ClientOptions = {
     allowedMentions: { parse: [] },
     intents: [Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_VOICE_STATES, Intents.FLAGS.GUILD_MEMBERS],
