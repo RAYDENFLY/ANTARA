@@ -1,0 +1,4 @@
+# ANTARA CHANGELOGS 24.02.2022
+- Upstream to 1.0.0 (1.0)
+- Add Framework Akairo
+- Untested
