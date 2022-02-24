@@ -10,6 +10,9 @@
 
 ANTARA Project adalah project open source yang di buat oleh team [NexaCorp Team](https://github.com/NexaCorpTEAM/)
 
+# ChangeLogs
+[View Changelogs](https://github.com/RAYDENFLY/ANTARA/blob/main/changelogs.txt)
+
 # Config (.env)
 `OWNER_ID="User ID"`
 
