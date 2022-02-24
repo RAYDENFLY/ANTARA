@@ -1,21 +1,17 @@
-import { Sys } from "./core/client/SayaClient";
-import { sysoption } from "./config/config";
-import { token } from "./config/token";
-export const Core = new Sys(sysoption);
-
-import "./core/CommandLoader";
+import SayaClient from "./core/client/SayaClient";
+require('dotenv').config()
 
 
-Core.on("error", console.error);
-Core.on("warn", console.warn);
+
+const Client = new SayaClient({
+    ownerID: process.env.OWNER_ID,
+    token: process.env.TOKEN
+})
 
 /**
  * Login the bot with the token.
  */
-Core.login(token)
-    .then(() => {
-        console.log("Login successful!");
-    })
-    .catch(err => {
-        console.error(err);
-    });
+
+Client.start()
+    .then(() => console.log('[✔] Login successful!!'))
+
