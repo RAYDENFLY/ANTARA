@@ -1,4 +1,4 @@
-import { Sys } from "./core/sys";
+import { Sys } from "./Core/SayaClient";
 import { sysoption } from "./config/config";
 import { token } from "./config/token";
 export const Core = new Sys(sysoption);
