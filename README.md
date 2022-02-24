@@ -2,11 +2,11 @@
 ![ANTARA](https://opengraph.githubassets.com/fb8a0431a3993acc24edcbd6d5af1438d4edfb0bb1ab60d855081d57c65eb1f7/NexaCorpTEAM/ANTARA)
 
 # About
-Version : Community
+**Version** : `Community`
 
-Tags : Unofficial
+**Tags** : `Unofficial`
 
-Maintainer : RAYDENFLY ( Azis Maulana )
+**Maintainer** : `RAYDENFLY ( Azis Maulana )`
 
 ANTARA Project adalah project open source yang di buat oleh team [NexaCorp Team](https://github.com/NexaCorpTEAM/)
 
@@ -24,5 +24,7 @@ ANTARA Project adalah project open source yang di buat oleh team [NexaCorp Team]
 
 # Support
 **NexaCorp Discord Official** : [NexaCorp](https://discord.gg/VVMVT2bnc3)
+
 **Donate** : [Saweria](https://saweria.co/raydenfly)
+
 **My Telegram Support** : [AMS Production Media](https://t.me/amscreative)
