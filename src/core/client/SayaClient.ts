@@ -1,10 +1,7 @@
 
   
-import {AkairoClient, CommandHandler, ListenerHandler, MongooseProvider} from 'discord-akairo'
+import {AkairoClient, CommandHandler, ListenerHandler} from 'discord-akairo'
 import {join} from 'path'
-import GuildModel from '../../models/GuildSettings'
-import UserModel from '../../models/UserSettings'
-import mongoose from 'mongoose';
 
 
 
@@ -13,8 +10,6 @@ declare module 'discord-akairo' {
     interface AkairoClient {
         commandHandler: CommandHandler,
         listenerHandler: ListenerHandler,
-        GuildSettings: MongooseProvider,
-        UserSettings: MongooseProvider
     }
 }
 
@@ -22,10 +17,9 @@ declare module 'discord-akairo' {
 interface Options {
     token: string,
     ownerID: string,
-    mongooseURI: string
 }
 
-export default class BotClient extends AkairoClient {
+export default class SayaClient extends AkairoClient {
     public config: Options
     
 
@@ -37,8 +31,6 @@ export default class BotClient extends AkairoClient {
             ownerID: config.ownerID
         });
         this.config = config;
-        this.GuildSettings = new MongooseProvider(GuildModel)
-        this.UserSettings = new MongooseProvider(UserModel)
         
     }
     public commandHandler = new CommandHandler(this, {
@@ -59,21 +51,10 @@ export default class BotClient extends AkairoClient {
 
     })
     public listenerHandler = new ListenerHandler(this, {
-        directory: join(__dirname, '..', '..', 'listeners')
+        directory: join(__dirname, '..', 'listeners')
     })
 
-    private async connectDatabase(): Promise<void> {
-        try {
-            await mongoose.connect(this.config.mongooseURI, {
-                useNewUrlParser: true,
-                useUnifiedTopology: true
-            })
-            console.log('[✔] Connected to database')
-        } catch(e) {
-            console.log(e)
-        }
-    }
-
+   
     private async _init(): Promise<void> {
         this.commandHandler.useListenerHandler(this.listenerHandler)
         this.listenerHandler.setEmitters({
@@ -82,8 +63,6 @@ export default class BotClient extends AkairoClient {
         })
         this.listenerHandler.loadAll()
         this.commandHandler.loadAll()
-        await this.connectDatabase()
-        await this.GuildSettings.init()
     }
 
     public async start(): Promise<string> {
